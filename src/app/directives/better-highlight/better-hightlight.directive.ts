@@ -11,7 +11,7 @@ export class BetterHightlightDirective implements OnInit {
     
   }
   // HostBinding allows you to bind to a property of the dom element
-  @HostBinding ("style.backgroundColor") backgroundColor : string
+  @HostBinding ("style.backgroundColor") backgroundColor : string = "transparent"
 
   @HostListener ('mouseenter') mouseover (eventData: Event) {
 
