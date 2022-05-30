@@ -14,8 +14,18 @@
             [ngStyle]="{backgroundColor: item % 2 !== 0 ? 'pink' : 'yellow'}"
           >{{item}}</li>
         </div>
-        <div
+        <!-- <div
           *ngIf="!onlyOdd">
+          <li
+            class="list-group-item"
+            *ngFor="let item of numbers"
+            [ngClass]="{odd: item % 2 !== 0, even: item % 2 === 0}"
+            [ngStyle]="{backgroundColor: item % 2 !== 0 ? 'pink' : 'yellow'}"
+          >{{item}}
+          </li>
+        </div> -->
+        <div
+          *appUnless="onlyOdd">
           <li
             class="list-group-item"
             *ngFor="let item of numbers"
