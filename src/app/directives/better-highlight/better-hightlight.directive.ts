@@ -20,11 +20,14 @@ export class BetterHightlightDirective implements OnInit {
   constructor(private renderer: Renderer2, private elRef: ElementRef) { }
 
   ngOnInit(){
-    
+    //to set the component to this value when it loads
+    this.backgroundColor = this.defaultColor
   }
 
     // HostBinding allows you to bind to a property of the dom element
-  @HostBinding ("style.backgroundColor") backgroundColor : string = this.defaultColor
+    //if you set the value to defaultColor it won't apply it on load. 
+    //you have to add it to ngOnInit to load the component with that value
+  @HostBinding ("style.backgroundColor") backgroundColor : string
 
   @HostListener ('mouseenter') mouseover (eventData: Event) {
 
